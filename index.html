@@ -626,24 +626,25 @@
 <!-- ══ COVER ══ -->
 <div class="screen active" id="screen-cover">
   <span class="cover-badge">非典型職涯探索測驗</span>
-  <h1 class="cover-title">測測你的<br><em>非典型職涯</em><br>發展潛力✨</h1>
+  <h1 class="cover-title">你是哪種<br><em>職涯型態</em>？</h1>
   <p class="cover-tagline">
-    傳統職涯只有一條路<br>
-    但現在的你，可以重新設計<br>
-    自己的工作與人生組合
+    有人正在地圖前選方向<br>
+    有人已經在路上拼圖<br>
+    有人同時走著好幾條路<br><br>
+    10 題，找到你的非典型職涯型態
   </p>
   <div class="cover-features">
     <div class="cover-feature">
       <div class="cover-feature-dot"></div>
-      <span>你的職涯掌控程度</span>
+      <span>你的職涯型態與位置</span>
     </div>
     <div class="cover-feature">
       <div class="cover-feature-dot"></div>
-      <span>目前累積的資源與優勢</span>
+      <span>你身上已有的優勢資源</span>
     </div>
     <div class="cover-feature">
       <div class="cover-feature-dot"></div>
-      <span>下一階段適合發展的可能性</span>
+      <span>下一步最值得發展的方向</span>
     </div>
   </div>
   <p class="cover-meta">10 題 · 約 1 分鐘</p>
@@ -705,7 +706,7 @@
   </div>
 
   <div class="ig-footer">
-    <div>Hsin｜非典型職涯設計教練</div>
+    <div>Hsin 非典型職涯設計</div>
     <a href="https://www.instagram.com/hsin.careerdesign" target="_blank">@hsin.careerdesign</a>
   </div>
 </div>
@@ -714,286 +715,283 @@
 const questions = [
   {
     id: 1, axis: 'X',
-    text: '目前你對自己的職涯方向感覺比較接近哪一種？',
+    text: '朋友說要介紹你認識一個業界前輩，你第一個念頭是？',
     options: [
-      { letter: 'A', text: '我正在探索自己真正適合什麼，希望找到更多可能', score: -2 },
-      { letter: 'B', text: '我知道目前狀態需要調整，但還沒有明確方向', score: -1 },
-      { letter: 'C', text: '我大致知道自己想發展的方向，只是需要更整理', score: 1 },
-      { letter: 'D', text: '我很清楚自己想創造什麼樣的職涯方向', score: 2 },
+      { letter: 'A', text: '好啊，但我要先想想我到底想聊什麼方向', score: -2 },
+      { letter: 'B', text: '有點期待，但不確定自己現在適合談什麼', score: -1 },
+      { letter: 'C', text: '剛好，我最近在往某個方向走，可以交流', score: 1 },
+      { letter: 'D', text: '好，我知道我想從這個人身上得到什麼', score: 2 },
     ]
   },
   {
     id: 2, axis: 'X',
-    text: '如果重新設計你的職涯，你目前最想探索的是？',
+    text: '有人問你「五年後你想在哪裡？」你通常怎麼回答？',
     options: [
-      { letter: 'A', text: '了解自己的興趣、能力與適合的位置', score: -2 },
-      { letter: 'B', text: '找出有哪些可能方向值得嘗試', score: -1 },
-      { letter: 'C', text: '發展符合自己能力與價值的方向', score: 1 },
-      { letter: 'D', text: '建立清楚的個人職涯定位與發展路徑', score: 2 },
+      { letter: 'A', text: '這個問題我一直沒有答案，真的不知道', score: -2 },
+      { letter: 'B', text: '說了一個答案，但自己也不太確定', score: -1 },
+      { letter: 'C', text: '大概知道方向，但還沒有很清楚的畫面', score: 1 },
+      { letter: 'D', text: '我不一定知道職稱，但我知道我想過什麼樣的生活', score: 2 },
     ]
   },
   {
     id: 3, axis: 'Y',
-    text: '過去一年，你對新的職涯可能做過哪些嘗試？',
+    text: '過去一年，你在職涯上做過最主動的一件事是？',
     options: [
-      { letter: 'A', text: '目前主要維持現況，還沒有開始探索', score: -2 },
-      { letter: 'B', text: '有想法，但還在觀察與準備階段', score: -1 },
-      { letter: 'C', text: '有開始學習、累積新能力或接觸新領域', score: 1 },
-      { letter: 'D', text: '已主動測試新的方向，創造新的經驗', score: 2 },
+      { letter: 'A', text: '看了很多文章、課程或測驗，但還沒有實際行動', score: -2 },
+      { letter: 'B', text: '跟朋友聊過，但還停在想法的階段', score: -1 },
+      { letter: 'C', text: '有開始做一件具體的事（學新東西、接新案、嘗試新角色）', score: 1 },
+      { letter: 'D', text: '已經在測試一個新方向，有實際的成果或回饋', score: 2 },
     ]
   },
   {
     id: 4, axis: 'Y',
-    text: '當你想到職涯改變時，你比較像？',
+    text: '有個你有點興趣的領域，你會怎麼做？',
     options: [
-      { letter: 'A', text: '會先大量思考，還沒有開始行動', score: -2 },
-      { letter: 'B', text: '有興趣探索，但需要更多準備', score: -1 },
-      { letter: 'C', text: '會嘗試一些新的做法確認可能性', score: 1 },
-      { letter: 'D', text: '會透過實驗與行動找到適合方向', score: 2 },
+      { letter: 'A', text: '持續收藏相關資訊，還在觀察', score: -2 },
+      { letter: 'B', text: '想要行動，但一直覺得「還沒準備好」', score: -1 },
+      { letter: 'C', text: '找機會小規模接觸看看', score: 1 },
+      { letter: 'D', text: '直接找個方式切進去，邊做邊調整', score: 2 },
     ]
   },
   {
     id: 5, axis: 'X',
-    text: '你目前對自己的優勢與價值感覺如何？',
+    text: '你最近一次認真介紹自己「是做什麼的」，是什麼感覺？',
     options: [
-      { letter: 'A', text: '我還在認識自己有哪些能力與特色', score: -2 },
-      { letter: 'B', text: '我知道一些優勢，但還不知道如何運用', score: -1 },
-      { letter: 'C', text: '我知道自己的強項，也開始思考如何發展', score: 1 },
-      { letter: 'D', text: '我很清楚自己的價值，知道如何放大它', score: 2 },
+      { letter: 'A', text: '說不太清楚，卡住了一下', score: -2 },
+      { letter: 'B', text: '說完感覺不太像真正的自己', score: -1 },
+      { letter: 'C', text: '說得出來，但覺得還沒說到位', score: 1 },
+      { letter: 'D', text: '說完對方覺得很有趣，我自己也覺得說得準', score: 2 },
     ]
   },
   {
     id: 6, axis: 'X',
-    text: '面對未來職涯選擇，你通常會？',
+    text: '面對一個「感覺不錯但跟現在方向不同」的機會，你通常？',
     options: [
-      { letter: 'A', text: '想先找到答案，再決定下一步', score: -2 },
-      { letter: 'B', text: '需要更多資訊與探索，才比較能判斷', score: -1 },
-      { letter: 'C', text: '有方向後會開始規劃下一階段', score: 1 },
-      { letter: 'D', text: '會主動設計符合自己的職涯策略', score: 2 },
+      { letter: 'A', text: '什麼都想試，但也因此難以決定', score: -2 },
+      { letter: 'B', text: '心動但猶豫，最後通常沒有行動', score: -1 },
+      { letter: 'C', text: '會評估跟目前方向的關係再決定', score: 1 },
+      { letter: 'D', text: '有自己的判斷標準，比較快知道要不要', score: 2 },
     ]
   },
   {
     id: 7, axis: 'Y',
-    text: '你目前如何累積自己的職涯可能性？',
+    text: '你最常卡在哪個地方？',
     options: [
-      { letter: 'A', text: '主要累積目前工作經驗，還沒有特別探索', score: -2 },
-      { letter: 'B', text: '偶爾接觸新資訊，但還沒有形成行動', score: -1 },
-      { letter: 'C', text: '已開始培養新的技能、人脈或經驗', score: 1 },
-      { letter: 'D', text: '持續創造跨領域或新的發展機會', score: 2 },
+      { letter: 'A', text: '選項太多，不知道從哪個開始', score: -2 },
+      { letter: 'B', text: '知道要改變，但跨不出那一步', score: -1 },
+      { letter: 'C', text: '方向有了，但不知道怎麼落地執行', score: 1 },
+      { letter: 'D', text: '各種事情同時在跑，但感覺還沒有核心', score: 2 },
     ]
   },
   {
     id: 8, axis: 'Y',
-    text: '如果發現現在的路不是唯一選擇，你會？',
+    text: '看到別人分享「我轉職成功了」或「我開始接案了」，你的第一反應？',
     options: [
-      { letter: 'A', text: '先重新整理自己，再決定是否改變', score: -2 },
-      { letter: 'B', text: '先研究不同可能，慢慢評估', score: -1 },
-      { letter: 'C', text: '選擇一兩個方向開始測試', score: 1 },
-      { letter: 'D', text: '直接規劃小實驗，驗證新的可能', score: 2 },
+      { letter: 'A', text: '羨慕，但覺得自己還不知道要往哪裡轉', score: -2 },
+      { letter: 'B', text: '心動，但馬上想到一堆自己還沒準備好的事', score: -1 },
+      { letter: 'C', text: '覺得有參考價值，想了解他們怎麼做到的', score: 1 },
+      { letter: 'D', text: '想到自己也在做類似的事，或已經在路上了', score: 2 },
     ]
   },
   {
     id: 9, axis: 'Y',
-    text: '你對「非典型職涯」（多元職涯、跨領域、不同工作組合）的態度？',
+    text: '如果有人願意陪你整理職涯，你最希望先聊什麼？',
     options: [
-      { letter: 'A', text: '覺得有趣，但還不確定如何開始', score: -2 },
-      { letter: 'B', text: '有興趣了解，但目前還在觀察', score: -1 },
-      { letter: 'C', text: '已開始思考如何融入自己的發展', score: 1 },
-      { letter: 'D', text: '已經在嘗試建立自己的職涯組合', score: 2 },
+      { letter: 'A', text: '我到底適合什麼、有哪些可能性', score: -2 },
+      { letter: 'B', text: '我為什麼一直卡在這裡、怎麼跨出去', score: -1 },
+      { letter: 'C', text: '我現在的方向對不對、下一步怎麼走', score: 1 },
+      { letter: 'D', text: '我這些不同的事情，怎麼整合成一個清楚的定位', score: 2 },
     ]
   },
   {
     id: 10, axis: 'X',
-    text: '如果有人陪你探索職涯，你最希望獲得什麼？',
+    text: '如果職涯是一段旅程，你現在比較像在做什麼？',
     options: [
-      { letter: 'A', text: '更了解自己適合什麼方向', score: -2 },
-      { letter: 'B', text: '幫助我整理過去經驗與可能性', score: -1 },
-      { letter: 'C', text: '協助我確認下一階段方向', score: 1 },
-      { letter: 'D', text: '協助我打造更清楚的職涯定位', score: 2 },
+      { letter: 'A', text: '站在地圖前，還在決定要去哪裡', score: -2 },
+      { letter: 'B', text: '坐在路邊，想出發但還沒站起來', score: -1 },
+      { letter: 'C', text: '走在路上，地圖還沒畫完但方向大致有了', score: 1 },
+      { letter: 'D', text: '同時走幾條路，在找哪條先通', score: 2 },
     ]
   }
 ];
 
 const quadrants = {
-  'CR': {
-    emoji: '🌱',
-    typeEn: 'Career Rebuilder',
-    typeZh: '價值重塑者',
-    position: '正在重新整理自己的價值與方向',
+  'CD': {
+    emoji: '🌊',
+    typeEn: 'The Migrator',
+    typeZh: '候鳥型',
+    position: '不斷移動，每一站都是蓄積',
     descParts: [
-      '你目前可能正在經歷一個重新定義自己的階段。過去累積的工作經驗、能力、人際連結與人生選擇，其實都已經成為你的職涯資產，只是現在你開始想重新理解：',
-      '這個階段不是急著找到下一份工作，而是重新整理自己的故事，讓過去累積的一切能連結到未來。'
+      '你正在一個持續移動的階段。不是迷路，而是還在找值得停下來的地方。你的每一次嘗試、每一段經歷，都不是白走的——只是還沒找到那個讓你想紮根的方向。',
+      '候鳥知道季節會到來。你也知道，只是需要繼續感受風向。'
     ],
-    quotes: [
-      '「這些經歷對現在的我還代表什麼？」',
-      '「如果不只是延續過去，我還能創造什麼可能？」'
-    ],
+    quotes: ['「我不是沒有方向，我只是還在確認哪裡值得我停下來。」'],
     strengths: [
       {
-        title: '擁有豐富的經驗素材',
-        body: '你可能已經走過一些職涯階段，累積不同角色、任務或環境經驗。這些看似分散的經歷，其實可能隱藏著：',
-        items: ['重複出現的能力模式', '你擅長解決的問題', '別人認可你的價值']
-      },
-      {
-        title: '對自己的期待開始轉變',
-        body: '你開始不只追求「一份穩定的工作」，而是思考「什麼樣的工作方式比較符合現在的我？」這代表你正在建立更成熟的職涯觀。',
+        title: '對環境變化高度敏感',
+        body: '你比多數人更快察覺趨勢與機會，因為你一直保持在移動與觀察的狀態。',
         items: []
       },
       {
-        title: '具備重新設計的基礎',
-        body: '很多新的職涯方向，不是從零開始，而是從過去累積重新組合。你已有許多素材，只需要找到新的連結方式。',
+        title: '累積了比自己想像中更多的資源',
+        body: '每一段不同的經歷，都帶來了：',
+        items: ['新的人脈與視角', '跨領域的問題解決能力', '對自己的更深了解']
+      },
+      {
+        title: '行動力強，不怕改變',
+        body: '你願意嘗試、願意移動，這在很多人還在猶豫的時候，已經是一個優勢。',
         items: []
       }
     ],
     nextSteps: [
       {
-        title: '重新盤點你的職涯資產',
-        body: '整理：',
-        items: ['過去做過什麼', '哪些事情讓你有成就感', '哪些能力反覆被使用']
+        title: '回頭看看你走過的路',
+        body: '移動了這麼久，是時候停下來整理：',
+        items: ['哪些地方讓你感覺對了？', '哪些能力一直跟著你？', '什麼樣的狀態讓你最有活力？']
       },
       {
-        title: '找出「真正想延續」與「想放下」的部分',
-        body: '探索哪些工作模式適合未來、哪些期待來自外部標準、哪些選擇更符合現在的自己。',
+        title: '從「探索」轉向「確認」',
+        body: '你已經有足夠的素材，下一步不是繼續嘗試新的，而是開始整理已有的，找出值得深耕的方向。',
         items: []
       },
       {
-        title: '開始建立新的職涯敘事',
-        body: '把「我做過很多不同事情」重新轉化成「我累積了哪些跨領域能力，可以創造什麼價值」。',
+        title: '讓移動變成有方向的積累',
+        body: '候鳥的遷徙不是漫無目的——試著為下一段旅程設定一個想驗證的問題，而不只是換個地方。',
+        items: []
+      }
+    ]
+  },
+  'PC': {
+    emoji: '🌳',
+    typeEn: 'The Banyan',
+    typeZh: '榕樹型',
+    position: '根深葉茂，向外延伸出多條路',
+    descParts: [
+      '你已經知道自己站在哪裡，也開始往不同方向伸展。你不是做很多事情，而是從一個清楚的核心出發，長出不同的可能。',
+      '榕樹的氣根，每一條都可能成為新的樹幹。你的多元發展，正在形成自己的生態系。'
+    ],
+    quotes: ['「我不只在做一件事，但每件事背後都是同一個我。」'],
+    strengths: [
+      {
+        title: '具備清晰的核心定位',
+        body: '你知道自己是誰，這讓你的多元發展有了錨點，不容易在擴張中迷失。',
+        items: []
+      },
+      {
+        title: '能看見不同事物之間的連結',
+        body: '你的跨領域視角讓你能把看似無關的能力和經驗，整合成新的價值。',
+        items: []
+      },
+      {
+        title: '主動創造機會，而非等待',
+        body: '你已經在設計自己的職涯，而不只是回應市場的需求。',
+        items: []
+      }
+    ],
+    nextSteps: [
+      {
+        title: '確認你的核心，讓枝葉更有力',
+        body: '多元發展最大的風險是分散。問問自己：',
+        items: ['這些事情背後，共同的核心價值是什麼？', '哪條線最值得繼續深根？']
+      },
+      {
+        title: '把「我會很多事」轉成「我能幫誰解決什麼」',
+        body: '榕樹的價值不只是大，而是能成為別人的遮蔭。讓你的多元能力找到真實的應用場景。',
+        items: []
+      },
+      {
+        title: '設計可持續的組合方式',
+        body: '思考：',
+        items: ['哪些身份可以互相支撐？', '哪些收入方式適合長期維持？', '如何避免過度消耗自己？']
+      }
+    ]
+  },
+  'CR': {
+    emoji: '🌰',
+    typeEn: 'The Seed',
+    typeZh: '種子型',
+    position: '已知自己是什麼，正在等待破土的時機',
+    descParts: [
+      '你已經有了方向感，知道自己想往哪裡走。現在的你，比較像一顆已經準備好的種子——內在的能量在累積，等待一個對的時機，或一場對的雨。',
+      '種子不是什麼都沒發生，而是正在進行最重要的準備。'
+    ],
+    quotes: ['「我知道我想去哪裡，只是還沒找到讓自己真正出發的那個時機。」'],
+    strengths: [
+      {
+        title: '有清楚的方向與判斷力',
+        body: '你能分辨什麼機會適合自己，不容易被外在雜訊帶走，這是很多人缺乏的能力。',
+        items: []
+      },
+      {
+        title: '正在進行深度的內在整合',
+        body: '你不是在原地停著，而是在整理：',
+        items: ['過去的經驗如何成為養分', '自己真正想創造的價值是什麼', '什麼樣的環境適合自己生長']
+      },
+      {
+        title: '具備長期思考的能力',
+        body: '你願意等待對的時機，而不是倉促行動，這讓你的下一步更有機會走得穩。',
+        items: []
+      }
+    ],
+    nextSteps: [
+      {
+        title: '把「等待」轉成「小行動」',
+        body: '種子需要水才能發芽。不需要等到一切都準備好，試著找一個最小的行動，驗證你的方向。',
+        items: []
+      },
+      {
+        title: '釐清你在等什麼',
+        body: '問問自己：',
+        items: ['我在等的是外在條件，還是自己的準備？', '如果條件永遠不完美，我願意先走嗎？']
+      },
+      {
+        title: '建立第一個外部連結',
+        body: '把你內在已有的方向，試著說給一個人聽——接案、交流、寫一篇文章都可以。讓方向開始接觸空氣。',
         items: []
       }
     ]
   },
   'PE': {
     emoji: '🌿',
-    typeEn: 'Potential Explorer',
-    typeZh: '潛能探索者',
-    position: '正在打開更多可能性的探索階段',
+    typeEn: 'The Moss',
+    typeZh: '苔蘚型',
+    position: '安靜生長，在意想不到的地方紮根',
     descParts: [
-      '你目前可能已經開始感受到「現在的路不一定是唯一答案。」你願意接觸新的資訊、新領域或不同可能，也開始思考自己的下一階段。',
-      '你不是缺少可能，而是正在從大量可能中，找到真正值得投入的方向。'
+      '你正在一個安靜但真實的生長階段。你可能還不確定方向，但你對很多事都有感覺、有興趣，也願意接觸新的可能。',
+      '苔蘚不需要深厚的土壤，也能在石頭縫裡找到自己的位置。你的韌性和開放，是很多人沒有的。'
     ],
-    quotes: [],
+    quotes: ['「我不是沒有潛力，我只是還沒找到最適合自己生長的那塊地。」'],
     strengths: [
       {
-        title: '具備高度開放性與探索能力',
-        body: '你願意嘗試不同事物，不容易被單一路徑限制。這讓你更容易發現：',
-        items: ['新興機會', '跨領域連結', '不同職涯模式']
-      },
-      {
-        title: '能累積多元經驗',
-        body: '你的探索過程本身就是資產。每一次嘗試，都可能帶來新技能、新人脈、新視角，這些都可能成為未來職涯組合的一部分。',
+        title: '高度開放，對可能性敏感',
+        body: '你不容易被單一路徑綁住，這讓你更容易發現別人看不到的機會和連結。',
         items: []
       },
       {
-        title: '具有彈性與調整能力',
-        body: '非典型職涯很重要的能力之一，就是能根據環境調整方向。你可能比自己想像中更適合創造新的可能。',
+        title: '在不確定中保持好奇',
+        body: '很多人在不確定時選擇縮回去，但你還在探索、還在接觸——這本身就是一種能量。',
+        items: []
+      },
+      {
+        title: '累積的廣度是未來的資產',
+        body: '你接觸過的不同事物，在未來某個時間點可能會意外連在一起，成為你獨特的優勢組合。',
         items: []
       }
     ],
     nextSteps: [
       {
-        title: '不要只累積可能，要開始整理可能',
-        body: '探索很多方向很好，但下一步需要思考：',
-        items: ['哪些方向最符合你的價值？', '哪些值得投入更多時間？', '哪些只是短暫興趣？']
-      },
-      {
-        title: '用小型實驗取代等待答案',
-        body: '不要等到100%確定才開始。可以透過接案、專案、分享內容、交流訪談、小規模嘗試來驗證方向。',
+        title: '從「接觸」到「嘗試」',
+        body: '你已經累積了不少資訊和想法，下一步是找一件事，真的動手做做看。不需要完美，只需要開始。',
         items: []
       },
       {
-        title: '找出你的核心組合',
-        body: '探索不同可能後，開始整理「我的哪些能力組合起來，是市場需要的？」',
-        items: []
-      }
-    ]
-  },
-  'PC': {
-    emoji: '🚀',
-    typeEn: 'Portfolio Creator',
-    typeZh: '多元創造者',
-    position: '正在打造自己的職涯組合',
-    descParts: [
-      '你已經開始跳脫傳統職涯框架。你關注的不只是「我要做哪一份工作？」，而是「我的能力、興趣與價值，可以如何組合成更適合我的工作方式？」',
-      '你正在從單一路徑思考，轉向職涯設計思考。'
-    ],
-    quotes: [],
-    strengths: [
-      {
-        title: '能看見不同可能之間的連結',
-        body: '你可能具備跨領域整合能力，能把不同經驗、不同技能、不同興趣，組合成新的價值。',
-        items: []
+        title: '整理你的好奇清單',
+        body: '把你有感覺的事情都寫下來，然後問自己：',
+        items: ['哪些只是有趣？', '哪些讓我想深入？', '哪些我已經在不知不覺中累積了？']
       },
       {
-        title: '擁有多元身份發展潛力',
-        body: '你可能不只適合單一角色，例如：',
-        items: ['專業者 × 創作者', '顧問 × 教學者', '工作者 × 經營者']
-      },
-      {
-        title: '願意主動創造機會',
-        body: '你不是只等待職涯機會出現，而是開始思考如何創造自己的位置。',
-        items: []
-      }
-    ],
-    nextSteps: [
-      {
-        title: '找到你的核心定位',
-        body: '多元不代表做很多事情。需要找到「所有事情背後共同的核心價值」。',
-        items: []
-      },
-      {
-        title: '設計可持續的職涯組合',
-        body: '探索：',
-        items: ['哪些收入來源適合長期發展', '哪些身份可以互相支持', '如何避免過度分散']
-      },
-      {
-        title: '建立自己的市場連結',
-        body: '從「我會很多事情」進一步轉換成「我可以幫助誰解決什麼問題」。',
-        items: []
-      }
-    ]
-  },
-  'CD': {
-    emoji: '🧭',
-    typeEn: 'Career Designer',
-    typeZh: '職涯設計者',
-    position: '正在規劃下一階段發展路徑',
-    descParts: [
-      '你已經累積一定方向感，也知道自己想往哪裡發展。現在比較像是在思考「如何讓下一步走得更符合自己？」',
-      '你不是重新尋找方向，而是在優化與設計未來。'
-    ],
-    quotes: [],
-    strengths: [
-      {
-        title: '具備方向判斷能力',
-        body: '你能開始分辨：',
-        items: ['哪些機會值得投入', '哪些方向符合長期目標']
-      },
-      {
-        title: '有能力進行策略規劃',
-        body: '你不是只停留在想法，而是能思考資源、路徑、行動順序。',
-        items: []
-      },
-      {
-        title: '願意主動掌握職涯',
-        body: '你開始從「等待公司給我機會」轉向「我如何設計自己的發展」，這是非典型職涯的重要能力。',
-        items: []
-      }
-    ],
-    nextSteps: [
-      {
-        title: '把方向轉成具體行動',
-        body: '確認：',
-        items: ['下一階段目標', '需要累積的能力', '可以開始測試的行動']
-      },
-      {
-        title: '建立自己的職涯策略',
-        body: '思考：',
-        items: ['我要成為什麼樣的人？', '我的專業如何延伸？', '如何創造更大的價值？']
-      },
-      {
-        title: '保持探索彈性',
-        body: '即使方向清楚，也不代表固定不變。好的職涯設計，是有方向但保有調整空間。',
+        title: '找一個小實驗的起點',
+        body: '苔蘚不是等待完美的土壤，而是從現有的縫隙開始生長。找一個最近、最小的方式，測試你最有感覺的方向。',
         items: []
       }
     ]
@@ -1176,14 +1174,14 @@ function drawChart(xScore, yScore, qKey) {
     <!-- 左下: 潛能探索者(PE) X<0 Y<0 -->
     <rect x="${pad}" y="${cy}" width="${cx-pad}" height="${cy-pad}" fill="${qKey==='PE' ? '#C8E0CC' : '#EDF4EF'}" rx="4"/>
 
-    <!-- 左上標籤: 職涯設計者 -->
-    <text x="${(pad+cx)/2}" y="${(pad+cy)/2 - 6}" text-anchor="middle" font-size="8.5" fill="${qKey==='CD'?'#2D6040':'#7A8F80'}" font-family="'Noto Sans TC',sans-serif" font-weight="${qKey==='CD'?'700':'400'}">🧭 職涯設計者</text>
-    <!-- 右上標籤: 多元創造者 -->
-    <text x="${(cx+W-pad)/2}" y="${(pad+cy)/2 - 6}" text-anchor="middle" font-size="8.5" fill="${qKey==='PC'?'#2D6040':'#7A8F80'}" font-family="'Noto Sans TC',sans-serif" font-weight="${qKey==='PC'?'700':'400'}">🚀 多元創造者</text>
-    <!-- 右下標籤: 價值重塑者 -->
-    <text x="${(cx+W-pad)/2}" y="${(cy+H-pad)/2 - 6}" text-anchor="middle" font-size="8.5" fill="${qKey==='CR'?'#2D6040':'#7A8F80'}" font-family="'Noto Sans TC',sans-serif" font-weight="${qKey==='CR'?'700':'400'}">🌱 價值重塑者</text>
-    <!-- 左下標籤: 潛能探索者 -->
-    <text x="${(pad+cx)/2}" y="${(cy+H-pad)/2 - 6}" text-anchor="middle" font-size="8.5" fill="${qKey==='PE'?'#2D6040':'#7A8F80'}" font-family="'Noto Sans TC',sans-serif" font-weight="${qKey==='PE'?'700':'400'}">🌿 潛能探索者</text>
+    <!-- 左上標籤: 候鳥型 -->
+    <text x="${(pad+cx)/2}" y="${(pad+cy)/2 - 6}" text-anchor="middle" font-size="8.5" fill="${qKey==='CD'?'#2D6040':'#7A8F80'}" font-family="'Noto Sans TC',sans-serif" font-weight="${qKey==='CD'?'700':'400'}">🌊 候鳥型</text>
+    <!-- 右上標籤: 榕樹型 -->
+    <text x="${(cx+W-pad)/2}" y="${(pad+cy)/2 - 6}" text-anchor="middle" font-size="8.5" fill="${qKey==='PC'?'#2D6040':'#7A8F80'}" font-family="'Noto Sans TC',sans-serif" font-weight="${qKey==='PC'?'700':'400'}">🌳 榕樹型</text>
+    <!-- 右下標籤: 種子型 -->
+    <text x="${(cx+W-pad)/2}" y="${(cy+H-pad)/2 - 6}" text-anchor="middle" font-size="8.5" fill="${qKey==='CR'?'#2D6040':'#7A8F80'}" font-family="'Noto Sans TC',sans-serif" font-weight="${qKey==='CR'?'700':'400'}">🌰 種子型</text>
+    <!-- 左下標籤: 苔蘚型 -->
+    <text x="${(pad+cx)/2}" y="${(cy+H-pad)/2 - 6}" text-anchor="middle" font-size="8.5" fill="${qKey==='PE'?'#2D6040':'#7A8F80'}" font-family="'Noto Sans TC',sans-serif" font-weight="${qKey==='PE'?'700':'400'}">🌿 苔蘚型</text>
 
     <line x1="${pad}" y1="${cy}" x2="${W-pad}" y2="${cy}" stroke="#B8D4C0" stroke-width="1"/>
     <line x1="${cx}" y1="${pad}" x2="${cx}" y2="${H-pad}" stroke="#B8D4C0" stroke-width="1"/>
